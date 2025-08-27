@@ -1,156 +1,147 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Gamze & Mesut – Davetiye</title>
-  <!-- El yazısı ve gövde fontu -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Düğün Davetiyesi</title>
   <style>
-    :root{
-      --bg:#faf7f4;           /* temel arkaplan */
-      --ink:#2d2a26;          /* metin */
-      --muted:#6b6763;        /* ikincil metin */
-      --card:#ffffffcc;       /* yarı saydam kart */
-      --primary:#25d366;      /* WhatsApp yeşili */
-      --accent:#c8a97e;       /* altın/bej vurgu */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Georgia", serif;
+      color: #fff;
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)),
+                  url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e') no-repeat center center/cover;
+      height: 100vh;
+      overflow-x: hidden;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; color:var(--ink); font-family:Poppins, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", sans-serif;
-      /* Hafif çiçek desenli arkaplan + yumuşak degrade */
-      background:
-        radial-gradient(1200px 800px at 20% -10%, #fff9 0%, #fff0 70%),
-        radial-gradient(1000px 700px at 120% 10%, #f7efe780 0%, #fff0 60%),
-        url("data:image/svg+xml;utf8,\
-          <svg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300' fill='none'>\
-            <g opacity='0.08'>\
-              <path d='M150 30c20 30 40 40 70 45-25 15-35 35-35 65-25-20-45-20-70 0 0-30-10-50-35-65 30-5 50-15 70-45z' stroke='%23c8a97e' stroke-width='2' fill='none'/>\
-              <circle cx='70' cy='230' r='18' stroke='%23c8a97e' stroke-width='2'/>\
-              <circle cx='240' cy='220' r='12' stroke='%23c8a97e' stroke-width='2'/>\
-              <path d='M40 120c30 5 45 25 55 55' stroke='%23c8a97e' stroke-width='2'/>\
-              <path d='M260 100c-26 10-40 28-52 56' stroke='%23c8a97e' stroke-width='2'/>\
-            </g>\
-          </svg>") repeat; background-size:500px 500px;
+
+    h1 {
+      font-size: 3rem;
+      margin-top: 30px;
+      text-shadow: 2px 2px 10px #000;
     }
-    .wrap{max-width:1100px; margin:0 auto; padding:20px}
 
-    /* Üst bant (WhatsApp CTA) */
-    .cta{
-      position:sticky; top:0; z-index:10; backdrop-filter:saturate(140%) blur(6px);
-      background:linear-gradient(180deg, #ffffffee, #ffffffcc);
-      border:1px solid #0001; border-radius:16px; padding:16px; display:grid; gap:8px; text-align:center; margin:14px auto 10px;
+    .countdown {
+      font-size: 2rem;
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
     }
-    .cta .title{font-family:'Great Vibes', cursive; font-size:clamp(26px, 5.5vw, 56px); color:#1f1f1f; line-height:1}
-    .cta .subtitle{font-weight:600; letter-spacing:.3px; color:#1a1a1a}
-    .cta .hint{font-size:12px; color:var(--muted)}
-    .cta .row{display:flex; justify-content:center; align-items:center; gap:12px; flex-wrap:wrap}
-    .btn{appearance:none; border:0; border-radius:999px; padding:12px 18px; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:10px; cursor:pointer}
-    .btn.wa{background:var(--primary); color:#fff}
-    .btn.wa:hover{filter:brightness(1.08)}
-    .qr{width:82px; height:82px; border-radius:12px; border:1px solid #0001}
 
-    header{margin:10px 0 18px; text-align:center}
-    .names{font-family:'Great Vibes', cursive; font-size:clamp(34px, 7vw, 80px); color:var(--ink); margin:6px 0}
-    .tag{color:var(--muted)}
+    .time {
+      font-size: 2.5rem;
+      font-weight: bold;
+      animation: pulse 2s infinite, glow 2s ease-in-out infinite alternate;
+    }
 
-    /* Kart ızgara: yan yana (telefonlarda alta geçer) */
-    .grid{display:grid; gap:18px}
-    @media(min-width:900px){ .grid{grid-template-columns:1fr 1fr} }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.15); }
+      100% { transform: scale(1); }
+    }
 
-    .card{background:var(--card); border:1px solid #0001; border-radius:18px; padding:16px 16px 20px; backdrop-filter: blur(4px)}
-    .card h2{margin:6px 0 2px; font-size:22px}
-    .time{color:var(--muted); font-weight:600}
-    iframe{width:100%; height:320px; border:0; border-radius:14px; margin-top:10px}
+    @keyframes glow {
+      from { text-shadow: 0 0 5px gold, 0 0 10px gold; }
+      to { text-shadow: 0 0 20px #fff176, 0 0 30px gold; }
+    }
 
-    .countdown{display:flex; gap:10px; justify-content:center; margin-top:10px}
-    .t{min-width:72px; background:#fff; border:1px solid #0001; border-radius:12px; padding:10px 8px; text-align:center}
-    .t b{display:block; font-size:20px}
+    .buttons {
+      margin: 30px 0;
+    }
 
-    footer{color:var(--muted); text-align:center; padding:26px 6px}
+    .buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 25px;
+      background: #ff4081;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      transition: background 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+
+    .buttons a:hover {
+      background: #f50057;
+    }
+
+    /* Yaprak animasyonu */
+    .petal {
+      position: fixed;
+      top: -10px;
+      width: 20px;
+      height: 20px;
+      background: pink;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(110vh) rotate(360deg); }
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <!-- ÜST CTA: WhatsApp -->
-    <section class="cta" aria-label="WhatsApp Paylaşım Çağrısı">
-      <div class="title">Gamze & Mesut</div>
-      <div class="subtitle">ANI YAKALA VE ÇEKTİĞİN FOTOĞRAFLARI BİZİMLE PAYLAŞ</div>
-      <div class="row">
-        <a class="btn wa" id="waBtn" target="_blank" rel="noopener">📱 WhatsApp’a Katıl</a>
-        <img id="waQr" class="qr" alt="WhatsApp grup QR" />
-      </div>
-      <div class="hint">Butona tıklayın veya QR'ı telefon kameranızla okutun.</div>
-    </section>
+  <h1>Gamze & Mesut Düğün Davetiyesi</h1>
+  <p>19 Ekim 2025 | Saat: 19.00 - 24.00</p>
 
-    <!-- Başlık alanı -->
-    <header>
-      <div class="names">Gamze & Mesut</div>
-      <div class="tag">Bir ömür boyu mutluluğa davetlisiniz</div>
-    </header>
+  <div class="countdown" id="countdown"></div>
 
-    <!-- KINA & DÜĞÜN yan yana kartlar -->
-    <section class="grid">
-      <article class="card" aria-labelledby="kina-title">
-        <h2 id="kina-title">🪭 Kına Gecesi</h2>
-        <div class="time">18 Ekim 2025 • 19:00 – 24:00</div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3610.4459388911746!2d26.33001837600428!3d40.28212667146161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDE2JzU1LjciTiAyNsKwMTknNTcuMyJF!5e1!3m2!1str!2str!4v1756120492970!5m2!1str!2str" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <div class="countdown" id="cd-kina" aria-live="polite"></div>
-      </article>
-
-      <article class="card" aria-labelledby="dugun-title">
-        <h2 id="dugun-title">💍 Düğün</h2>
-        <div class="time">19 Ekim 2025 • 19:00 – 24:00</div>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.2215798352413!2d27.216173376453035!3d41.72553607495178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a75300711eb1b3%3A0x102dc640de83e73b!2sInpore!5e1!3m2!1str!2str!4v1756120588026!5m2!1str!2str" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <div class="countdown" id="cd-dugun" aria-live="polite"></div>
-      </article>
-    </section>
-
-    <footer>
-      © <span id="year"></span> Gamze & Mesut — Sevgi çoğalınca dünya güzelleşir.
-    </footer>
+  <div class="buttons">
+    <a href="https://www.google.com/maps/place/40%C2%B016'55.7%22N+26%C2%B019'57.3%22E" target="_blank">📍 Kına Adresi</a>
+    <a href="https://www.google.com/maps/place/Inpore/@41.725536,27.216173,17z" target="_blank">📍 Düğün Adresi</a>
   </div>
 
   <script>
-    // === KİŞİSELLEŞTİRME ===
-    const WHATSAPP_INVITE = "https://chat.whatsapp.com/Cbvg3adO2WSD8jaMJbKeoN";
-    const KINA_ISO = "2025-10-18T19:00:00+03:00";   // İstanbul saatinde 19:00
-    const DUGUN_ISO = "2025-10-19T19:00:00+03:00";  // İstanbul saatinde 19:00
+    // Geri sayım
+    const countdown = document.getElementById("countdown");
+    const targetDate = new Date("2025-10-19T19:00:00").getTime();
 
-    // WhatsApp CTA
-    const waBtn = document.getElementById('waBtn');
-    const waQr = document.getElementById('waQr');
-    waBtn.href = WHATSAPP_INVITE;
-    waQr.src = `https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=${encodeURIComponent(WHATSAPP_INVITE)}`;
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
 
-    // Geri sayım fonksiyonu
-    function startCountdown(iso, elId){
-      const target = new Date(iso).getTime();
-      const el = document.getElementById(elId);
-      function render(){
-        const now = Date.now();
-        const diff = target - now;
-        if(diff <= 0){ el.innerHTML = "Başladı 🎉"; return; }
-        const d = Math.floor(diff/86400000);
-        const h = Math.floor(diff%86400000/3600000);
-        const m = Math.floor(diff%3600000/60000);
-        const s = Math.floor(diff%60000/1000);
-        el.innerHTML = `
-          <div class='t'><b>${d}</b><span>gün</span></div>
-          <div class='t'><b>${h}</b><span>saat</span></div>
-          <div class='t'><b>${m}</b><span>dk</span></div>
-          <div class='t'><b>${s}</b><span>sn</span></div>`;
+      if (distance < 0) {
+        countdown.innerHTML = "<span class='time'>Mutluluk Başladı! 🎉</span>";
+        return;
       }
-      render();
-      setInterval(render, 1000);
-    }
-    startCountdown(KINA_ISO, 'cd-kina');
-    startCountdown(DUGUN_ISO, 'cd-dugun');
 
-    document.getElementById('year').textContent = new Date().getFullYear();
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `
+        <span class="time">${days} Gün</span>
+        <span class="time">${hours} Saat</span>
+        <span class="time">${minutes} Dakika</span>
+        <span class="time">${seconds} Saniye</span>
+      `;
+    }
+
+    setInterval(updateCountdown, 1000);
+
+    // Yaprak oluşturma
+    function createPetal() {
+      const petal = document.createElement("div");
+      petal.classList.add("petal");
+      petal.style.left = Math.random() * window.innerWidth + "px";
+      petal.style.animationDuration = 5 + Math.random() * 5 + "s";
+      petal.style.background = Math.random() > 0.5 ? "pink" : "white";
+      document.body.appendChild(petal);
+
+      setTimeout(() => {
+        petal.remove();
+      }, 10000);
+    }
+
+    setInterval(createPetal, 400);
   </script>
 </body>
 </html>

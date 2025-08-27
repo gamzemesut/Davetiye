@@ -3,153 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gamze & Mesut Davetiye</title>
+  <title>Düğün & Kına Davetiyesi</title>
   <style>
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
       padding: 0;
-      font-family: 'Georgia', serif;
-      background-color: #fdf6ed;
-      color: #5a3d2b;
+      background: #fafafa;
+      color: #333;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px 20px;
       text-align: center;
     }
-
     h1 {
-      font-family: 'Brush Script MT', cursive;
-      font-size: 3rem;
-      margin-top: 40px;
-    }
-
-    h2 {
-      font-size: 1.2rem;
-      letter-spacing: 3px;
-      margin: 0;
-    }
-
-    .container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 30px auto;
-      gap: 20px;
-      max-width: 900px;
-    }
-
-    .card {
-      background: #fffaf4;
-      border: 1px solid #e3d7c9;
-      border-radius: 12px;
-      padding: 20px;
-      flex: 1 1 300px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-
-    .card h3 {
-      font-size: 1.5rem;
+      font-size: 2.2rem;
       margin-bottom: 10px;
+      color: #2c3e50;
     }
-
-    .icon {
-      font-size: 2rem;
-      margin: 10px 0;
+    h2 {
+      font-size: 1.6rem;
+      margin: 25px 0 10px;
+      color: #8e44ad;
     }
-
-    .countdown {
-      margin-top: 15px;
+    p {
       font-size: 1rem;
-    }
-
-    .time {
-      font-size: 1.3rem;
-      font-weight: bold;
-      display: block;
       margin: 5px 0;
     }
-
-    .map {
-      margin: 20px 0;
+    .card {
+      background: #fff;
+      padding: 20px;
+      margin-top: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
-
-    .map img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .button {
-      display: inline-block;
-      padding: 10px 20px;
-      border: 1px solid #5a3d2b;
-      border-radius: 8px;
-      text-decoration: none;
-      color: #5a3d2b;
+    .date-time {
       font-weight: bold;
-      margin-top: 10px;
-      transition: all 0.3s;
+      color: #e74c3c;
+      margin: 10px 0;
     }
-
-    .button:hover {
-      background: #5a3d2b;
+    .btn {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 10px 18px;
+      background: #8e44ad;
       color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background: #732d91;
+    }
+    footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #777;
     }
   </style>
 </head>
 <body>
-  <h1>Gamze & Mesut</h1>
-  <h2>EVLENİYOR</h2>
-
   <div class="container">
-    <!-- KINA -->
+    <h1>Gamze & Mesut</h1>
+    <p>En mutlu günümüzde sizleri aramızda görmekten mutluluk duyarız 💕</p>
+
     <div class="card">
-      <h3>KINA</h3>
-      <p>18 Ekim 2025<br>19:00 - 24:00</p>
-      <div class="icon">🎁</div>
-      <p>Kına gecesine kalan süre</p>
-      <div id="countdown-kina" class="countdown"></div>
-      <a href="https://www.google.com/maps/place/40%C2%B016'55.7%22N+26%C2%B019'57.3%22E" target="_blank" class="button">📍 Haritayı Gör</a>
+      <h2>Kına Gecesi</h2>
+      <p class="date-time">Tarih: 18 Ekim 2025 | Saat: 19:00 - 24:00</p>
+      <a class="btn" href="https://www.google.com/maps/place/40.28212667146161,26.33001837600428" target="_blank">📍 Haritada Gör</a>
     </div>
 
-    <!-- DÜĞÜN -->
     <div class="card">
-      <h3>DÜĞÜN</h3>
-      <p>19 Ekim 2025<br>19:00 - 24:00</p>
-      <div class="icon">💍</div>
-      <p>Düğüne kalan süre</p>
-      <div id="countdown-dugun" class="countdown"></div>
-      <a href="https://www.google.com/maps/place/Inpore/@41.725536,27.216173,17z" target="_blank" class="button">📍 Haritayı Gör</a>
+      <h2>Düğün</h2>
+      <p class="date-time">Tarih: 19 Ekim 2025 | Saat: 19:00 - 24:00</p>
+      <a class="btn" href="https://www.google.com/maps/place/41.72553607495178,27.216173376453035" target="_blank">📍 Haritada Gör</a>
     </div>
+
+    <footer>
+      <p>Sevgiyle, Gamze & Mesut</p>
+    </footer>
   </div>
-
-  <script>
-    function countdown(elementId, targetDate) {
-      const el = document.getElementById(elementId);
-
-      function update() {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
-
-        if (distance < 0) {
-          el.innerHTML = "<span class='time'>Başladı 🎉</span>";
-          return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        // const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        el.innerHTML = `
-          <span class="time">${days} Gün</span>
-          <span class="time">${hours} Saat</span>
-          <span class="time">${minutes} Dakika</span>
-        `;
-      }
-
-      update();
-      setInterval(update, 60000); // Dakikada bir güncelleniyor
-    }
-
-    countdown("countdown-kina", new Date("2025-10-18T19:00:00").getTime());
-    countdown("countdown-dugun", new Date("2025-10-19T19:00:00").getTime());
-  </script>
 </body>
 </html>

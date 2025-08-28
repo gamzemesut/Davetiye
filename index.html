@@ -2,157 +2,141 @@
 <html lang="tr">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gamze & Mesut Evleniyor</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
+      font-family: 'Times New Roman', serif;
+      background: #f4f1e1;
+      color: #2c2c2c;
       margin: 0;
-      font-family: 'Quicksand', sans-serif;
-      background: linear-gradient(to bottom, #fdfdfd, #e6f0ff);
-      overflow-x: hidden;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fffdf6;
+      border: 2px solid #2c2c2c;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      padding: 30px;
+    }
+
+    h1 {
+      font-family: 'Georgia', serif;
+      font-size: 3rem;
       text-align: center;
-    }
-
-    /* Arka plan süzülen yapraklar/çiçekler */
-    .falling {
-      position: fixed;
-      top: -10%;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      z-index: -1;
-    }
-    .leaf {
-      position: absolute;
-      top: -10%;
-      width: 30px;
-      height: 30px;
-      background-image: url('https://cdn-icons-png.flaticon.com/512/616/616408.png');
-      background-size: cover;
-      animation: fall linear infinite;
-      opacity: 0.7;
-    }
-    @keyframes fall {
-      0% { transform: translateY(-10%) rotate(0deg); }
-      100% { transform: translateY(110vh) rotate(360deg); }
-    }
-
-    /* Başlıklar */
-    .title {
-      font-family: 'Great Vibes', cursive;
-      font-size: 42px;
-      color: #ff7b00;
-      margin-top: 20px;
-    }
-    .names {
-      font-family: 'Great Vibes', cursive;
-      font-size: 64px;
-      margin: 10px 0;
-      color: #004080;
-    }
-
-    /* WhatsApp */
-    .whatsapp {
-      margin: 20px 0;
-    }
-    .whatsapp p {
-      font-size: 18px;
-      font-weight: 600;
       margin-bottom: 10px;
+      border-bottom: 3px double #2c2c2c;
+      padding-bottom: 10px;
+      color: #d2691e;
     }
-    .whatsapp a {
+
+    h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      margin: 20px 0;
+      font-style: italic;
+    }
+
+    .events {
+      display: flex;
+      justify-content: space-around;
+      margin: 30px 0;
+    }
+
+    .event {
+      text-align: center;
+      width: 45%;
+      border: 1px dashed #2c2c2c;
+      padding: 15px;
+      background: #faf6eb;
+    }
+
+    .event h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #1e3a8a;
+    }
+
+    .event p {
+      margin: 5px 0;
+    }
+
+    .event a {
       display: inline-block;
-      padding: 12px 24px;
-      background-color: #25D366;
+      margin-top: 10px;
+      padding: 8px 14px;
+      background: #d2691e;
       color: white;
       text-decoration: none;
-      border-radius: 25px;
+      border-radius: 5px;
+      font-size: 0.9rem;
+    }
+
+    .whatsapp {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      border-top: 2px solid #2c2c2c;
+    }
+
+    .whatsapp h3 {
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    .whatsapp a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #25D366;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
       font-weight: bold;
     }
 
-    /* Kına ve düğün yan yana */
-    .events {
-      display: flex;
-      justify-content: center;
-      gap: 40px;
+    footer {
+      text-align: center;
       margin-top: 40px;
-      flex-wrap: wrap;
-    }
-    .card {
-      background: white;
-      border-radius: 20px;
-      padding: 20px;
-      width: 280px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .card h2 {
-      font-family: 'Great Vibes', cursive;
-      font-size: 32px;
-      color: #ff7b00;
-    }
-    .card p {
-      font-size: 16px;
-      margin: 8px 0;
-      color: #333;
-    }
-    .map {
-      width: 100%;
-      height: 200px;
-      border-radius: 12px;
-      margin: 15px 0;
-    }
-    .card button {
-      background: #004080;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 14px;
-    }
-    .card button:hover {
-      background: #0066cc;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #555;
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <h1>Gamze & Mesut Evleniyor</h1>
+    <h2>Büyük Gün Gazetesi - Özel Haber</h2>
 
-  <!-- Yapraklar/çiçekler -->
-  <div class="falling">
-    <div class="leaf" style="left:10%; animation-duration: 10s;"></div>
-    <div class="leaf" style="left:30%; animation-duration: 12s;"></div>
-    <div class="leaf" style="left:50%; animation-duration: 9s;"></div>
-    <div class="leaf" style="left:70%; animation-duration: 14s;"></div>
-    <div class="leaf" style="left:90%; animation-duration: 11s;"></div>
-  </div>
+    <div class="events">
+      <div class="event">
+        <h3>Kına Gecesi</h3>
+        <p><strong>Tarih:</strong> 17 Ekim 2025</p>
+        <p><strong>Saat:</strong> 19:00</p>
+        <p><strong>Yer:</strong> Kırklareli Düğün Salonu</p>
+        <a href="https://maps.google.com/?q=Kırklareli+Düğün+Salonu" target="_blank">Kınaya Git</a>
+      </div>
 
-  <div class="title">Gamze & Mesut Evleniyor</div>
-  <div class="names">Gamze & Mesut</div>
-
-  <!-- WhatsApp bağlantısı -->
-  <div class="whatsapp">
-    <p>ÇEKTİĞİN FOTOĞRAFLARI BİZİMLE PAYLAŞ</p>
-    <a href="https://chat.whatsapp.com/Cbvg3adO2WSD8jaMJbKeoN" target="_blank">📸 WhatsApp Grubuna Katıl</a>
-  </div>
-
-  <!-- Kına ve Düğün Kartları -->
-  <div class="events">
-    <div class="card">
-      <h2>Kına</h2>
-      <p><strong>Tarih:</strong> 18 Ekim 2025</p>
-      <p><strong>Saat:</strong> 19:00</p>
-      <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!..." loading="lazy"></iframe>
-      <button onclick="window.open('https://maps.google.com/?q=Kına+mekanı')">Kınaya Git</button>
+      <div class="event">
+        <h3>Düğün</h3>
+        <p><strong>Tarih:</strong> 19 Ekim 2025</p>
+        <p><strong>Saat:</strong> 20:00</p>
+        <p><strong>Yer:</strong> Edirne Nikah Salonu</p>
+        <a href="https://maps.google.com/?q=Edirne+Nikah+Salonu" target="_blank">Düğüne Git</a>
+      </div>
     </div>
 
-    <div class="card">
-      <h2>Düğün</h2>
-      <p><strong>Tarih:</strong> 19 Ekim 2025</p>
-      <p><strong>Saat:</strong> 20:00</p>
-      <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!..." loading="lazy"></iframe>
-      <button onclick="window.open('https://maps.google.com/?q=Düğün+mekanı')">Düğüne Git</button>
+    <div class="whatsapp">
+      <h3>ÇEKTİĞİN FOTOĞRAFLARI BİZİMLE PAYLAŞ</h3>
+      <a href="https://chat.whatsapp.com/Cbvg3adO2WSD8jaMJbKeoN" target="_blank">WhatsApp Grubuna Katıl</a>
     </div>
-  </div>
 
+    <footer>
+      "Gamze & Mesut’un en mutlu gününde siz de yerinizi alın"  
+    </footer>
+  </div>
 </body>
 </html>

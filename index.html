@@ -108,4 +108,197 @@
     .card header{
       display:flex; align-items:baseline; justify-content:space-between;
       border-bottom:1px dashed var(--rule);
-      padding-bottom:8px; margin-bott
+      padding-bottom:8px; margin-bottom:10px;
+    }
+    .card header h2{
+      font-size:1.35rem; margin:0;
+      letter-spacing:.04em;
+    }
+    .badge{
+      font-variant:small-caps;
+      letter-spacing:.08em;
+      font-size:.9rem;
+      opacity:.8;
+    }
+
+    .meta{ margin:6px 0 10px; }
+    .meta b{ font-weight:700; }
+    .map-wrap{
+      margin:10px 0 12px;
+      border:1px solid #aaa;
+      box-shadow:0 2px 6px rgba(0,0,0,.15);
+    }
+    .map-wrap iframe{
+      display:block; width:100%; height:260px; border:0;
+    }
+
+    .actions{
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .btn{
+      appearance:none; border:none; cursor:pointer;
+      background:var(--link); color:#fff;
+      padding:10px 14px; border-radius:6px;
+      font-weight:700; text-decoration:none; display:inline-block;
+    }
+    .btn.secondary{
+      background:#0f172a;
+    }
+
+    /* Geri sayım şeridi */
+    .count{
+      margin-top:10px;
+      padding:8px 10px;
+      border:1px solid var(--rule);
+      background:#fff;
+      font-weight:700;
+      display:flex; gap:12px; justify-content:center; flex-wrap:wrap;
+    }
+    .count .unit{ min-width:90px; text-align:center; }
+    .count .num{ font-size:1.15rem; display:block; }
+    .count .lab{ font-size:.8rem; letter-spacing:.06em; opacity:.8; }
+
+    /* Paylaş alanı */
+    .share{
+      margin-top:26px;
+      border-top:3px double var(--rule);
+      padding-top:18px; text-align:center;
+    }
+    .share h3{
+      margin:0 0 10px; font-size:1rem; letter-spacing:.12em; text-transform:uppercase;
+    }
+    .wa{
+      display:inline-block; background:var(--whatsapp); color:#fff;
+      padding:12px 18px; border-radius:999px; font-weight:800; text-decoration:none;
+    }
+
+    /* İnce süs ayraç */
+    .orn{
+      text-align:center; opacity:.55; margin:12px 0 6px;
+      font-size:14px; letter-spacing:.4em;
+    }
+  </style>
+</head>
+<body>
+
+  <article class="sheet" role="article" aria-label="Gamze ve Mesut Evleniyor – Gazete Küpürü">
+    <header class="masthead">
+      <div class="kicker">ÖZEL HABER</div>
+      <h1>Gamze &amp; Mesut Evleniyor</h1>
+      <div class="dateline">Büyük Gün Duyurusu</div>
+    </header>
+
+    <div class="grid" role="region" aria-label="Etkinlikler">
+      <!-- KINA -->
+      <section class="card" aria-labelledby="kina-title">
+        <header>
+          <h2 id="kina-title">Kına Gecesi</h2>
+          <span class="badge">duyuru</span>
+        </header>
+
+        <div class="meta">
+          <div><b>Tarih:</b> 18.10.2025</div>
+          <div><b>Saat:</b> 19:00 – 24:00</div>
+        </div>
+
+        <div class="map-wrap" aria-label="Kına Konumu Haritası">
+          <!-- Senin verdiğin iframe (responsive boyutla) -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3610.4459388911746!2d26.33001837600428!3d40.28212667146161!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDDCsDE2JzU1LjciTiAyNsKwMTknNTcuMyJF!5e1!3m2!1str!2str!4v1756120492970!5m2!1str!2str"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="actions">
+          <!-- Navigasyona uygun direkt rota linki (Google Maps) -->
+          <a class="btn" target="_blank"
+             href="https://www.google.com/maps/dir/?api=1&destination=40.28212667146161,26.33001837600428">
+            Kınaya Git
+          </a>
+        </div>
+
+        <div class="count" id="count-kina" aria-live="polite">
+          <!-- JS dolduracak -->
+        </div>
+      </section>
+
+      <!-- DÜĞÜN -->
+      <section class="card" aria-labelledby="dugun-title">
+        <header>
+          <h2 id="dugun-title">Düğün</h2>
+          <span class="badge">duyuru</span>
+        </header>
+
+        <div class="meta">
+          <div><b>Tarih:</b> 19.10.2025</div>
+          <div><b>Saat:</b> 19:00 – 24:00</div>
+        </div>
+
+        <div class="map-wrap" aria-label="Düğün Konumu Haritası">
+          <!-- Senin verdiğin iframe (responsive boyutla) -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.2215798352413!2d27.216173376453035!3d41.72553607495178!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40a75300711eb1b3%3A0x102dc640de83e73b!2sInpore!5e1!3m2!1str!2str!4v1756120588026!5m2!1str!2str"
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="actions">
+          <a class="btn" target="_blank"
+             href="https://www.google.com/maps/dir/?api=1&destination=41.72553607495178,27.216173376453035">
+            Düğüne Git
+          </a>
+        </div>
+
+        <div class="count" id="count-dugun" aria-live="polite">
+          <!-- JS dolduracak -->
+        </div>
+      </section>
+    </div>
+
+    <div class="orn">✦ ✦ ✦</div>
+
+    <section class="share" aria-labelledby="share-title">
+      <h3 id="share-title">ÇEKTİĞİN FOTOĞRAFLARI BİZİMLE PAYLAŞ</h3>
+      <a class="wa" target="_blank" href="https://chat.whatsapp.com/Cbvg3adO2WSD8jaMJbKeoN">
+        WhatsApp Grubuna Katıl
+      </a>
+    </section>
+  </article>
+
+  <script>
+    // İstanbul saatine sabitle (Türkiye UTC+3)
+    const IST_OFFSET = "+03:00";
+
+    function startCountdown(elId, isoLocal){
+      const el = document.getElementById(elId);
+      const target = new Date(isoLocal).getTime();
+
+      function tick(){
+        const now = Date.now();
+        const diff = target - now;
+        if(diff <= 0){
+          el.innerHTML = "<span class='unit'><span class='num'>Başladı 🎉</span></span>";
+          return;
+        }
+        const d = Math.floor(diff / (1000*60*60*24));
+        const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+        const m = Math.floor((diff % (1000*60*60)) / (1000*60));
+        const s = Math.floor((diff % (1000*60)) / 1000);
+
+        el.innerHTML =
+          "<span class='unit'><span class='num'>" + d + "</span><span class='lab'>Gün</span></span>" +
+          "<span class='unit'><span class='num'>" + h + "</span><span class='lab'>Saat</span></span>" +
+          "<span class='unit'><span class='num'>" + m + "</span><span class='lab'>Dakika</span></span>" +
+          "<span class='unit'><span class='num'>" + s + "</span><span class='lab'>Saniye</span></span>";
+      }
+      tick();
+      setInterval(tick, 1000);
+    }
+
+    // Kına: 18.10.2025 19:00 (İstanbul)
+    startCountdown("count-kina",  "2025-10-18T19:00:00"+IST_OFFSET);
+    // Düğün: 19.10.2025 19:00 (İstanbul)
+    startCountdown("count-dugun", "2025-10-19T19:00:00"+IST_OFFSET);
+  </script>
+</body>
+</html>
